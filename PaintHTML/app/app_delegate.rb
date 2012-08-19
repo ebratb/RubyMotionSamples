@@ -7,4 +7,10 @@ class AppDelegate
     @window.makeKeyAndVisible
     true
   end
+
+	def applicationDidBecomeActive( application )
+	  # reset home after becoming active
+    @window.rootViewController.set_web_view_home
+	end
+
 end

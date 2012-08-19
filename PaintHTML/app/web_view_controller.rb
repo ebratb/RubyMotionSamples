@@ -11,11 +11,15 @@ class WebViewController < UIViewController
     @webView.scalesPageToFit = true
     @webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)
     @webView.delegate = self
-    @webView.loadRequest(NSURLRequest.requestWithURL(NSURL.fileURLWithPath(NSBundle.mainBundle.pathForResource('index2', ofType:'html'))))
-    # @webView.loadRequest(NSURLRequest.requestWithURL(NSURL.URLWithString("http://www.fngtps.com/")))
-    # @webView.loadHTMLString('<h1><a href="http://www.fngtps.com">Click me!</h1>', baseURL:nil)
   end
-  
+
+  # reset the home page to view
+  def set_web_view_home
+    @webView.loadRequest( NSURLRequest.requestWithURL( NSURL.fileURLWithPath( NSBundle.mainBundle.pathForResource( 'index2', ofType:'html') ) ) )
+#    @webView.loadRequest(NSURLRequest.requestWithURL(NSURL.URLWithString("http://www.fngtps.com/")))
+#    @webView.loadHTMLString('<h1><a href="http://www.fngtps.com">Click me!</h1>', baseURL:nil)
+  end
+
   # Remove the following if you're showing a status bar that's not translucent
   def wantsFullScreenLayout
     true
